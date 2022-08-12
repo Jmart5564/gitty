@@ -28,6 +28,10 @@ describe('backend-express-template routes', () => {
       exp: expect.any(Number),
     });
   });
+  it('DELETE should log out a user', async () => {
+    const resp = await request(app).delete('/api/v1/github/sessions');
+    expect(resp.status).toBe(200);
+  });
 
 
   afterAll(() => {
